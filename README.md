@@ -8,16 +8,20 @@ can verify that they are allowed to connect each other.
 
 > bash ./generate_certificates.sh
 
-generates CA, Server and Client keys and PEM Certificates
+
+generates CA, Server and Client Keys and PEM Certificates
 
 
+# Give it a try with an API Rest server
 
 > npm i fastify
+
 > node server.js
 
 provide a fastify node js 
 
 
+# Test a connection with CURL 
 
 > bash ./test_curl.sh
 
