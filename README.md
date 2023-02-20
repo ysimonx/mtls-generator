@@ -7,7 +7,7 @@ can verify that they are allowed to connect each other.
 
 > bash ./generate_certificates.sh
 
-generates CA, Server and Client certificates
+generates CA, Server and Client keys and PEM Certificates
 
 
 
