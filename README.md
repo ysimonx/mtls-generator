@@ -34,6 +34,10 @@ provide a fastify node js
 
 > bash ./test_curl.sh
 
+or
+
+> curl --cacert ./certificates/ca/caCrt.pem --cert ./certificates/client/clientCrt.pem --key ./certificates/client/clientKey.pem https://localhost:3000/
+
 call fastify api rest server, on "localhost", with ca and client certificates 
 
 should returns
