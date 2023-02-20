@@ -43,3 +43,55 @@ call fastify api rest server, on "localhost", with ca and client certificates
 should returns
 
 > {"hello":"world"}
+
+
+## Test a connection with Flutter
+
+'''
+
+void getHttp() async {
+  Dio dio = new Dio();
+
+  ByteData clientCertificate = await rootBundle.load("assets/clientCrt.pem");
+  ByteData privateKey = await rootBundle.load("assets/clientKey.pem");
+  String rootCACertificate = await rootBundle.loadString("assets/caCrt.pem");
+
+  dio.httpClientAdapter = IOHttpClientAdapter()
+    ..onHttpClientCreate = (_) {
+      // (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+      final SecurityContext context = SecurityContext(withTrustedRoots: false);
+
+      context.setTrustedCertificatesBytes(utf8.encode(rootCACertificate));
+
+      context.useCertificateChainBytes(clientCertificate.buffer.asUint8List());
+
+      context.usePrivateKeyBytes(privateKey.buffer.asUint8List());
+      HttpClient httpClient = HttpClient(context: context);
+
+      /*
+            cf  https://pub.dev/packages/dio
+
+            There are two ways to verify the root of the https certificate chain provided by the server. Suppose the certificate format is PEM, the code like:
+            ...
+            return cert.pem == PEM; // Verify the certificate.
+    ... */
+
+      httpClient.badCertificateCallback =
+          (X509Certificate cert, String host, int port) {
+        print(host);
+        print(port);
+        print(cert.pem);
+        print(rootCACertificate);
+        if (cert.pem == rootCACertificate) {
+          return true;
+        }
+        return false;
+      };
+
+      return httpClient;
+    };
+
+  final response = await dio.get('https://localhost:3000/');
+  print(response);
+}
+'''
