@@ -1,4 +1,5 @@
-# MTLS Mutual Authentication Certificates - (and a PoC with Fastify)
+# MTLS Mutual Authentication Certificates 
+(and a PoC with Fastify)
 
 How is it possible to provide self-signed certificates for your fastify API for mutual authentication
 With these certicates, you should be able to connect a server and a client and both of them
