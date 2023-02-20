@@ -21,7 +21,7 @@ can verify that they are allowed to connect each other.
 generates CA, Server and Client Keys and PEM Certificates
 
 
-# Give it a try with an API Rest server
+## Give it a try with an API Rest server
 
 > npm i fastify
 
@@ -30,7 +30,7 @@ generates CA, Server and Client Keys and PEM Certificates
 provide a fastify node js 
 
 
-# Test a connection with CURL 
+## Test a connection with CURL 
 
 > bash ./test_curl.sh
 
