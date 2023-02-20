@@ -8,6 +8,7 @@ can verify that they are allowed to connect each other.
 
 > bash ./generate_certificates.sh
 
+<img width="227" alt="Capture d’écran 2023-02-20 à 08 18 43" src="https://user-images.githubusercontent.com/1449867/220038197-0c8a10fb-b3b3-427b-a2d0-9fe01fa0b897.png">
 
 generates CA, Server and Client Keys and PEM Certificates
 
