@@ -1,9 +1,17 @@
 # mTLS Mutual TLS/SSL Authentication Certificates 
 (and a PoC with Fastify)
 
+With this repository, with self-signed certificates you can :
+
+- on server side : verify if a client is allowed to request the API server
+
+- on client side : verify if a server is the good one
+
+
 How is it possible to provide self-signed certificates for your fastify API for mutual authentication
 With these certicates, you should be able to connect a server and a client and both of them
 can verify that they are allowed to connect each other.
+
 
 
 > bash ./generate_certificates.sh
