@@ -5,6 +5,7 @@
 MY_ORG="my-org"
 SERVER_NAME="localhost"
 CLIENT_NAME="clienthost"
+EXPIRATION_DELAY_DAYS=365
 
 CERTIFICATES_DIR=./certificates
 CERTIFICATES_CA_DIR=$CERTIFICATES_DIR/ca
@@ -25,7 +26,7 @@ openssl req \
   -new \
   -x509 \
   -nodes \
-  -days 365 \
+  -days $EXPIRATION_DELAY_DAYS \
   -subj "/CN=${MY_ORG}" \
   -keyout $CERTIFICATES_CA_DIR/ca.key \
   -out $CERTIFICATES_CA_DIR/caCrt.pem
@@ -48,7 +49,7 @@ openssl x509 \
   -CA $CERTIFICATES_CA_DIR/caCrt.pem \
   -CAkey $CERTIFICATES_CA_DIR/ca.key \
   -CAcreateserial \
-  -days 365 \
+  -days $EXPIRATION_DELAY_DAYS \
   -out $CERTIFICATES_SERVER_DIR/serverCrt.pem
 
 
