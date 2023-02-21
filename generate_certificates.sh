@@ -2,15 +2,15 @@
 
 
 # Organisation for CA Cert
-MY_ORG="my-irg"
+MY_ORG="my-org"
 
-# Hostname of the Server
+# Server's hostname
 SERVER_NAME="localhost"
 
 # SAN Server Alternative Names
 SERVER_ALT_NAME="DNS:localhost,IP:127.0.0.1,IP:192.168.200.1"
 
-# Hostname or the Client
+# client's name
 CLIENT_NAME="clienthost"
 
 # 100 ans
@@ -88,6 +88,6 @@ openssl x509 \
 
 
 
-echo "======== Check Server CSR =========="
+echo "======== Check Server PEM =========="
 
-openssl req -text -in $CERTIFICATES_SERVER_DIR/server.csr 
+openssl x509 -in ./certificates/server/serverCrt.pem -text
