@@ -20,7 +20,7 @@ can verify that they are allowed to connect each other.
 
 generates CA, Server and Client Keys and PEM Certificates
 
-You can specify multiple DNS hostname or IP adresses on Server
+You can specify multiple DNS hostname or IP adresses for the Server
 
 
 ## Give it a try with an API Rest server
