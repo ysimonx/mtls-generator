@@ -20,6 +20,8 @@ can verify that they are allowed to connect each other.
 
 generates CA, Server and Client Keys and PEM Certificates
 
+You can specify multiple DNS hostname or IP adresses on Server
+
 
 ## Give it a try with an API Rest server
 
@@ -27,7 +29,7 @@ generates CA, Server and Client Keys and PEM Certificates
 
 > node server.js
 
-provide a fastify node js 
+Provides a fastify nodejs server as an API Rest 
 
 
 ## Test a connection with CURL 
