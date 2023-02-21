@@ -27,20 +27,26 @@ You can specify multiple DNS hostname or IP adresses for the Server
 
 ## Give it a try with an API Rest server
 
-> npm i fastify
+```
+npm i fastify
 
-> node server.js
+node server.js
+```
 
 Provides a fastify nodejs server as an API Rest 
 
 
 ## Test a connection with CURL 
 
-> bash ./test_curl.sh
+```
+bash ./test_curl.sh
+```
 
 or
 
-> curl --cacert ./certificates/ca/caCrt.pem --cert ./certificates/client/clientCrt.pem --key ./certificates/client/clientKey.pem https://localhost:3000/
+```
+curl --cacert ./certificates/ca/caCrt.pem --cert ./certificates/client/clientCrt.pem --key ./certificates/client/clientKey.pem https://localhost:3000/
+```
 
 call fastify api rest server, on "localhost", with ca and client certificates 
 
