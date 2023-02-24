@@ -55,7 +55,7 @@ should returns
 > {"hello":"world"}
 
 
-## Test a connection with Flutter
+## Example : mTLS request from a Flutter/Dart client
 
 ```
 void getHttp() async {
