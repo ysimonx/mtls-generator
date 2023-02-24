@@ -1,4 +1,4 @@
-# mTLS Mutual TLS/SSL Authentication Certificates 
+# mTLS Mutual TLS Authentication Certificates 
 (and a PoC with Fastify, and/or Flutter)
 
 main script is : https://raw.githubusercontent.com/ysimonx/mtls-ssl-generator/main/generate_certificates.sh
@@ -53,6 +53,10 @@ call fastify api rest server, on "localhost", with ca and client certificates
 should returns
 
 > {"hello":"world"}
+
+## Example : mTLS support for a Python/Flask server
+
+see https://github.com/mr-satan1/mTLS-Flask-Template/blob/main/minimal-flask-dev.py
 
 
 ## Example : mTLS request from a Flutter/Dart client
