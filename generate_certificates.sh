@@ -86,8 +86,15 @@ openssl x509 \
   -out $CERTIFICATES_CLIENT_DIR/clientCrt.pem
 
 
-
+echo "======== Check CA     PEM =========="
+openssl x509 -in ./certificates/ca/caCrt.pem -text
 
 echo "======== Check Server PEM =========="
-
 openssl x509 -in ./certificates/server/serverCrt.pem -text
+
+echo "======== Check Client PEM =========="
+openssl x509 -in ./certificates/client/clientCrt.pem -text
+
+echo "======== verify that Server or Client Certificate had been issued by the CA ========"
+openssl verify -verbose -CAfile ./certificates/ca/caCrt.pem  ./certificates/server/serverCrt.pem
+openssl verify -verbose -CAfile ./certificates/ca/caCrt.pem  ./certificates/client/clientCrt.pem
