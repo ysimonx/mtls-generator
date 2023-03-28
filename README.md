@@ -1,6 +1,8 @@
 # mTLS Mutual TLS Authentication Certificates 
 (and a PoC with Fastify, and/or Flutter)
 
+by [Yannick Simon](https://yannicksimon.fr)
+
 main script is : https://raw.githubusercontent.com/ysimonx/mtls-ssl-generator/main/generate_certificates.sh
 
 This repository generates self-signed certificates that :
