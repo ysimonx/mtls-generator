@@ -70,6 +70,8 @@ void getHttp() async {
   ByteData clientCertificate = await rootBundle.load("assets/clientCrt.pem");
   ByteData privateKey = await rootBundle.load("assets/clientKey.pem");
   String rootCACertificate = await rootBundle.loadString("assets/caCrt.pem");
+  String serverCertificate = await rootBundle.loadString("assets/serverCrt.pem");
+
 
   dio.httpClientAdapter = IOHttpClientAdapter()
     ..onHttpClientCreate = (_) {
@@ -83,7 +85,14 @@ void getHttp() async {
       httpClient.badCertificateCallback =
           (X509Certificate cert, String host, int port) {
 
+        /* june 2023 : I noticied that cert parameter does not give rootCACertificate anymore
+                       It has been replaced by Server Certificate !
         if (cert.pem == rootCACertificate) {
+          return true;
+        }
+        */
+        
+        if (cert.pem == serverCertificate) {
           return true;
         }
         return false;
