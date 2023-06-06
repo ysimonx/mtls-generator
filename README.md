@@ -85,7 +85,7 @@ void getHttp() async {
       httpClient.badCertificateCallback =
           (X509Certificate cert, String host, int port) {
 
-        /* june 2023 : I noticied that cert parameter does not give rootCACertificate anymore
+        /* june 2023 : I noticed that cert parameter does not give rootCACertificate anymore
                        It has been replaced by Server Certificate !
         if (cert.pem == rootCACertificate) {
           return true;
